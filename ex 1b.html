@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Twitter</title>
+<style>
+body{font-family:Arial;background:#eee}
+.box{width:500px;margin:30px auto;background:white;padding:20px}
+textarea{width:95%;height:60px;padding:10px}
+button{background:#1da1f2;color:white;border:0;padding:8px 15px;margin:5px;border-radius:15px}
+.post{border-top:1px solid #ddd;padding:15px}
+</style>
+</head>
+
+<body>
+<div class="box">
+<h2>🐦 Twitter</h2>
+
+<textarea id="msg" placeholder="What's happening?"></textarea><br>
+<button onclick="post()">Post</button>
+
+<h3>People to Follow</h3>
+<div id="users"></div>
+
+<h3>Feed</h3>
+<div id="feed"></div>
+</div>
+
+<script>
+let users=["Arsath","Rahul","udhaya"];
+let follow=[true,false,false];
+let posts=[
+["Alice","Hello everyone! 👋"],
+["Bob","I love web development!"]
+];
+function show(){
+    usersEl.innerHTML=users.map((u,i)=>
+    `${u} <button onclick="toggle(${i})">
+    ${follow[i]?"Following":"Follow"}</button><br>`).join("");
+
+    feed.innerHTML=posts.filter(p=>
+    p[0]=="You" || follow[users.indexOf(p[0])])
+    .map(p=>`<div class="post"><b>${p[0]}</b><p>${p[1]}</p>❤️ Like</div>`)
+    .join("");
+}
+
+function post(){
+    let m=msg.value.trim();
+    if(m){
+        posts.unshift(["You",m]);
+        msg.value="";
+        show();
+    }
+}
+
+function toggle(i){
+    follow[i]=!follow[i];
+    show();
+}
+
+let usersEl=document.getElementById("users");
+let feed=document.getElementById("feed");
+let msg=document.getElementById("msg");
+
+show();
+</script>
+</body>
+</html>
