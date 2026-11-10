@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniTweet - Micro Blogging App</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <span>✦</span>
+            MiniTweet
+        </div>
+
+        <nav>
+            <a href="#" class="nav-item active" data-section="home">
+                🏠 <span>Home</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="explore">
+                🔍 <span>Explore</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="notifications">
+                🔔 <span>Notifications</span>
+            </a>
+
+            <a href="#" class="nav-item" data-section="profile">
+                👤 <span>Profile</span>
+            </a>
+        </nav>
+
+        <button class="post-button" id="sidebarPostBtn">
+            + Post
+        </button>
+
+        <div class="sidebar-user">
+            <img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80"
+                alt="Alex"
+            >
+
+            <div>
+                <strong>Alex Johnson</strong>
+                <small>@alexjohnson</small>
+            </div>
+
+            <span>•••</span>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <header class="topbar">
+            <h2 id="pageTitle">Home</h2>
+
+            <div class="search-box">
+                🔍
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search posts..."
+                >
+            </div>
+        </header>
+
+
+        <!-- CREATE POST -->
+        <section class="composer">
+
+            <img
+                class="avatar"
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80"
+                alt="Your profile"
+            >
+
+            <div class="composer-content">
+
+                <textarea
+                    id="postText"
+                    maxlength="280"
+                    placeholder="What's happening?"
+                ></textarea>
+
+                <div class="composer-bottom">
+
+                    <div class="post-tools">
+                        <button title="Add image">🖼️</button>
+                        <button title="Add emoji">😊</button>
+                        <button title="Add location">📍</button>
+
+                        <span id="charCount">0/280</span>
+                    </div>
+
+                    <button class="publish-btn" id="publishBtn">
+                        Post
+                    </button>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- FEED -->
+        <section id="feed" class="feed">
+        </section>
+
+    </main>
+
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="right-sidebar">
+
+        <div class="widget">
+
+            <h3>Who to follow</h3>
+
+            <div class="follow-user">
+                <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80"
+                    alt="David"
+                >
+
+                <div class="follow-info">
+                    <strong>David Smith</strong>
+                    <span>@davidsmith</span>
+                </div>
+
+                <button class="follow-btn">Follow</button>
+            </div>
+
+
+            <div class="follow-user">
+
+                <img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80"
+                    alt="Sophia"
+                >
+
+                <div class="follow-info">
+                    <strong>Sophia Lee</strong>
+                    <span>@sophialee</span>
+                </div>
+
+                <button class="follow-btn">Follow</button>
+
+            </div>
+
+
+            <div class="follow-user">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80"
+                    alt="Michael"
+                >
+
+                <div class="follow-info">
+                    <strong>Michael Brown</strong>
+                    <span>@michaelb</span>
+                </div>
+
+                <button class="follow-btn">Follow</button>
+
+            </div>
+
+        </div>
+
+
+        <div class="widget trends">
+
+            <h3>Trending for you</h3>
+
+            <div class="trend">
+                <small>Technology · Trending</small>
+                <strong>#ArtificialIntelligence</strong>
+                <span>24.5K posts</span>
+            </div>
+
+            <div class="trend">
+                <small>Education · Trending</small>
+                <strong>#StudentLife</strong>
+                <span>12.8K posts</span>
+            </div>
+
+            <div class="trend">
+                <small>Programming · Trending</small>
+                <strong>#WebDevelopment</strong>
+                <span>9.4K posts</span>
+            </div>
+
+        </div>
+
+
+        <footer>
+            © 2026 MiniTweet · Privacy · Terms
+        </footer>
+
+    </aside>
+
+</div>
+
+
+<!-- TOAST MESSAGE -->
+<div id="toast" class="toast">
+    Post published successfully!
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
